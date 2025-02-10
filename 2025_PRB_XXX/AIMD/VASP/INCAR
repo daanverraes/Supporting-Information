@@ -1,0 +1,32 @@
+SYSTEM = La3Ni2O7                     # System title
+
+# Molecular Dynamics (MD) and Ionic Relaxation Settings
+IVDW = 12                             # Grimme DFT-D3 van der Waals correction for dispersion interactions
+IBRION = 0                            # Enables molecular dynamics (MD); 0 is required for MD
+MDALGO = 3                            # NPT ensemble with Langevin thermostat for temperature & pressure control
+ISIF = 3                              # Fully relax atomic positions, cell shape, and volume
+SMASS = -3                            # Langevin thermostat; required when using MDALGO=3 for stochastic temperature control
+TEBEG = 10                            # Initial temperature in Kelvin
+TEEND = 10                            # Final temperature in Kelvin (constant temperature MD)
+PSTRESS = 0                           # External pressure in kB; set to 0 for ambient conditions
+PMASS = 2000                          # Barostat mass parameter; adjust for better pressure stability
+POTIM = 1.0                           # MD time step in femtoseconds (fs); 0.5–1.0 fs is typical for AIMD
+NSW = 20000                           # Number of MD steps; adjust for required simulation length
+
+# Langevin Thermostat Damping Coefficients
+LANGEVIN_GAMMA = 10 5 2               # Friction coefficients for La, Ni, and O (adjust based on test runs)
+LANGEVIN_GAMMA_L = 10                 # Damping parameter for lattice degrees of freedom
+
+# Electronic Structure and SCF Convergence
+NELM = 100                            # Maximum number of SCF (Self-Consistent Field) steps per MD step
+NELMIN = 4                            # Minimum SCF steps per MD step
+EDIFF = 1E-08                         # Energy convergence criterion for SCF cycles in MD (relaxed from static runs)
+PREC = Normal                         # Precision mode; "Normal" speeds up MD; "High" improves accuracy
+ENCUT = 600                           # Plane-wave energy cutoff in eV (consistent with optimization settings)
+ISMEAR = 0                            # Gaussian smearing method (default for insulators/semiconductors)
+SIGMA = 0.04                          # Smearing width in eV; small values help with energy stability in MD
+ISPIN = 1                             # Non-spin-polarized calculation (set to 2 for spin-polarized runs)
+ISYM = 0                              # Symmetry disabled (recommended for MD in NPT ensemble)
+
+# Parallelization
+NCORE = 8                             # Number of CPU cores for parallelization; adjust based on hardware
