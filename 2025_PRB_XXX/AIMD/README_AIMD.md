@@ -2,7 +2,7 @@
 
 This script automates the submission of **NPT (constant pressure & temperature) AIMD simulations** for different pressure and temperature conditions using VASP.
 
-## How the For-Loop Works
+## How the For-Loop in loop.sh Works
 
 The script iterates over **a range of pressures and temperatures**, creating and submitting simulation jobs for each combination:
 
@@ -17,14 +17,14 @@ The script iterates over **a range of pressures and temperatures**, creating and
      - `PSTRESS = <pressure>` → Updates the **external pressure**.
      - `TEBEG = <temperature>` and `TEEND = <temperature>` → Sets the **initial and final temperatures**.
    - The job name in `submitscript.sh` is updated for clarity.
-   - The job is submitted via `qsub submitscript.sh`.
+   - The VASP job is submitted via `qsub submitscript.sh`.
 
-## Meaning of the INCAR File in this Context
+3. Input AIMD jobs (INCAR)
 
-The **INCAR** file contains VASP settings for the **NPT-AIMD simulation**. The key parameters affected by the loop:
-
-- **PSTRESS**: External pressure (in kB) is set dynamically for each job.
-- **TEBEG / TEEND**: Defines the starting and ending temperature, ensuring a constant temperature MD.
-- Other parameters (e.g., **MDALGO=3**, **SMASS=-3**, **PMASS=2000**) define the **Langevin thermostat & barostat** to control temperature and pressure during MD.
-
-This script enables efficient, automated sampling of pressure-temperature conditions for **ab initio molecular dynamics** in VASP.
+   The **INCAR** file contains VASP settings for the **NPT-AIMD simulation**. The key parameters affected by the loop:
+   
+   - **PSTRESS**: External pressure (in kB) is set dynamically for each job.
+   - **TEBEG / TEEND**: Defines the starting and ending temperature, ensuring a constant temperature MD.
+   - Other parameters (e.g., **MDALGO=3**, **SMASS=-3**, **PMASS=2000**) define the **Langevin thermostat & barostat** to control temperature and pressure during MD.
+   
+   This script enables efficient, automated sampling of pressure-temperature conditions for **ab initio molecular dynamics** in VASP.
