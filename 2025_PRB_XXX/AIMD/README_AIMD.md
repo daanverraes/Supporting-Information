@@ -2,9 +2,9 @@
 
 These scripts automate the submission and post-processing of **NPT (constant pressure & temperature) AIMD simulations** for different pressure and temperature conditions using VASP.
 
-## How the For-Loop in loop.sh submit VASP jobs
+## Submitting jobs
 
-The script iterates over **a range of pressures and temperatures**, creating and submitting simulation jobs for each combination:
+The loop.sh script iterates over **a range of pressures and temperatures**, creating and submitting simulation jobs for each combination:
 
 1. **Looping Over Parameters:**  
    - `pressures=($(seq 0 50 1000))` → Generates pressures from **0 to 100** in steps of **5 GPa**.  
