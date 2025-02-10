@@ -1,6 +1,6 @@
-# NPT AIMD Job Submission Script
+# NPT AIMD
 
-This script automates the submission of **NPT (constant pressure & temperature) AIMD simulations** for different pressure and temperature conditions using VASP.
+These script automates the submission and post-processing of **NPT (constant pressure & temperature) AIMD simulations** for different pressure and temperature conditions using VASP.
 
 ## How the For-Loop in loop.sh submit VASP jobs
 
