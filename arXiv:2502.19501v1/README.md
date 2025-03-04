@@ -2,7 +2,7 @@
 
 This GitHub repository contains the input and raw output data accompanying the manuscript
 
-**Evidence for strongly correlated superconductivity in La$_3$Ni$_2$O$_7$ from first principles**
+**Evidence for strongly correlated superconductivity in La<sub>3</sub>Ni<sub>2</sub>O<sub>7</sub> from first principles**
 
 by Daan Verraes, Tom Braeckevelt, Nick Bultinck, Veronique Van Speybroeck.
 
@@ -14,7 +14,7 @@ The data presented here is licensed under the CC BY-SA 4.0 international license
 Additional information concerning the data is available upon request from the authors. Please send a mail to Daan.Verraes@UGent.be for more information.
 
 ## Software
-All simulations were performed with VASP 6.4.2, and Wannier90 Wannier90-3.1.0. The pre- and post-processing Python scripts are written in Python 3.12.
+All simulations were performed with VASP 6.4.2 interfaced with Wannier90 3.1.0. The pre- and post-processing Python scripts are written in Python 3.12.
 
 
 ## Optimalization
