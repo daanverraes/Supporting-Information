@@ -11,7 +11,7 @@ This work was submitted on *[arXiv](https://arxiv.org/abs/2502.19501)*.
 
 The data presented here is licensed under the CC BY-SA 4.0 international license, a copy of which can be found [here](https://creativecommons.org/licenses/by-sa/4.0/). Under this license, you can copy and redistribute the material in any medium or format as long as you give appropriate credit, provide a link to the license, and indicate if changes were made.
 
-Additional information concerning the data is available upon request from the authors. Please send a mail to Daan.Verraes@UGent.be for more information.
+Additional information concerning the data is available upon request from the authors. Please send a mail to Veronique.VanSpeybroeck@UGent.be for more information.
 
 ## Software
 All simulations were performed with VASP 6.4.2 interfaced with Wannier90 3.1.0. The pre- and post-processing Python scripts are written in Python 3.12.
