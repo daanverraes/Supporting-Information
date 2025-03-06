@@ -14,10 +14,30 @@ The data presented here is licensed under the CC BY-SA 4.0 international license
 Additional information concerning the data is available upon request from the authors. Please send a mail to Veronique.VanSpeybroeck@UGent.be for more information.
 
 ## Software
-All simulations were performed with VASP 6.4.2 interfaced with Wannier90 3.1.0. The pre- and post-processing Python scripts are written in Python 3.12. The VASP calculations employed POTCAR (PAW_PBE) files, which are proprietary and not publicly available.
+All simulations were performed with VASP 6.4.2 interfaced with Wannier90 3.1.0. The pre- and post-processing Python scripts are written in Python 3.12. The VASP calculations utilized POTCAR (PAW_PBE) files, which contain pseudopotentials based on the Projector Augmented-Wave method with the Perdew-Burke-Ernzerhof exchange-correlation functional. These files are proprietary and not publicly accessible.
+
+## Structural Optimization  
+
+These scripts automate the submission and post-processing of **ionic relaxation simulations** in VASP under varying pressure conditions. The `loop.sh` script iterates over a predefined range of pressures, creating and submitting jobs for each case.  
+
+### Workflow:  
+1. **Loop Over Pressures**: The script generates simulations for pressures from **0 to 1000 kB**.  
+2. **Directory Setup**: For each pressure, a new directory is created, and necessary input files are copied from a template.  
+3. **Parameter Modification**:  
+   - `PSTRESS` in **INCAR** is updated to reflect the pressure condition.  
+   - Job names in **submitscript.sh** are modified accordingly.  
+4. **Job Submission**: Each simulation is submitted using `qsub submitscript.sh`.  
+
+### VASP Optimization Setup:  
+- **IBRION = 2** → Conjugate gradient algorithm for ionic relaxation.  
+- **ISIF = 3** → Allows relaxation of both atomic positions and cell shape.  
+- **PSTRESS** → External pressure is dynamically set for each run.  
+- **EDIFF = 1E-08** → Tight SCF convergence for accurate energy and forces.  
+- **ENCUT = 600 eV** → Plane-wave cutoff energy for reliable results.  
+
+This setup enables efficient structural optimization across different pressures using **first-principles DFT calculations**.
 
 
-## Structural Optimalization
 
 ## Electronic Structure and Dimer Model
 
