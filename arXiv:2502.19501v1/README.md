@@ -4,10 +4,9 @@ This GitHub repository contains the input and raw output data accompanying the m
 
 **Evidence for strongly correlated superconductivity in La<sub>3</sub>Ni<sub>2</sub>O<sub>7</sub> from first principles**
 
-by Daan Verraes, Tom Braeckevelt, Nick Bultinck, Veronique Van Speybroeck.
+by Daan Verraes, Tom Braeckevelt, Nick Bultinck and Veronique Van Speybroeck.
 
 This work was submitted on *[arXiv](https://arxiv.org/abs/2502.19501)*.
-
 
 The data presented here is licensed under the CC BY-SA 4.0 international license, a copy of which can be found [here](https://creativecommons.org/licenses/by-sa/4.0/). Under this license, you can copy and redistribute the material in any medium or format as long as you give appropriate credit, provide a link to the license, and indicate if changes were made.
 
@@ -18,7 +17,8 @@ All simulations were performed with VASP 6.4.2 interfaced with Wannier90 3.1.0. 
 
 ## Structural Optimization  
 
-These scripts automate the submission and post-processing of **ionic relaxation simulations** in VASP under varying pressure conditions. The `loop.sh` script iterates over a predefined range of pressures, creating and submitting jobs for each case.  
+This setup enables efficient structural optimization across different pressures using **first-principles DFT calculations**.
+The available scripts automate the submission and post-processing of **ionic relaxation simulations** in VASP under varying pressure conditions. The `loop.sh` script iterates over a predefined range of pressures, creating and submitting jobs for each case.  
 
 ### Workflow:  
 1. **Loop Over Pressures**: The script generates simulations for pressures from **0 to 1000 kB**.  
@@ -35,11 +35,9 @@ These scripts automate the submission and post-processing of **ionic relaxation 
 - **EDIFF = 1E-08** → Tight SCF convergence for accurate energy and forces.  
 - **ENCUT = 600 eV** → Plane-wave cutoff energy for reliable results.  
 
-This setup enables efficient structural optimization across different pressures using **first-principles DFT calculations**.
-
-
-
 ## Electronic Structure and Dimer Model
+
+
 
 ## Ab initio molecular dynamics (AIMD)
 
