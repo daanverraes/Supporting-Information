@@ -37,7 +37,7 @@ The available scripts automate the submission and post-processing of **ionic rel
 
 ## Electronic Structure and Dimer Model
 
-This setup enables DFT calculations, Wannierization and cRPA calculations for the unit cell optimized at 2 GPa. Some of the calculations require the output of previous ones as input files and are not always given. The correct input files for each step are given below (the asterix denotes a calculation-specific file):
+This setup enables DFT calculations, Wannierization and cRPA calculations for the unit cell optimized at 2 GPa. The calculations should be performed in this order. Some of the calculations require the output of previous ones as input files and are not always given. The correct input files for each step are given below (the asterix denotes a calculation-specific file):
 
 **DFT groundstate calculation (SCF)**
 - INCAR*
@@ -76,6 +76,11 @@ This setup enables DFT calculations, Wannierization and cRPA calculations for th
 - WANPROJ (from MLWFS)
 - WAVECAR (from LWL)
 - WAVEDER (from LWL)
+
+**Tight-binding (TB)**
+- hopping.py
+- toolbox.py
+
 
 The interpolation.py script in the MLWFS folder enables the plotting of the band structure superimposed by the Wannier interpolated bands.
 If any intermediate output files are requested, feel free to contact me.
