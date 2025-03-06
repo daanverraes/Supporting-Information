@@ -14,17 +14,16 @@ The data presented here is licensed under the CC BY-SA 4.0 international license
 Additional information concerning the data is available upon request from the authors. Please send a mail to Veronique.VanSpeybroeck@UGent.be for more information.
 
 ## Software
-All simulations were performed with VASP 6.4.2 interfaced with Wannier90 3.1.0. The pre- and post-processing Python scripts are written in Python 3.12.
+All simulations were performed with VASP 6.4.2 interfaced with Wannier90 3.1.0. The pre- and post-processing Python scripts are written in Python 3.12. The VASP calculations employed POTCAR (PAW_PBE) files, which are proprietary and not publicly available.
 
 
-## Optimalization
+## Structural Optimalization
 
+## Electronic Structure and Dimer Model
 
 ## Ab initio molecular dynamics (AIMD)
 
-These scripts automate the submission and post-processing of **NPT (constant pressure & temperature) AIMD simulations** for different pressure and temperature conditions using VASP.
-
-The loop.sh script iterates over **a range of pressures and temperatures**, creating and submitting simulation jobs for each combination:
+These scripts automate the submission and post-processing of **NPT (constant pressure & temperature) AIMD simulations** for different pressure and temperature conditions using VASP. The loop.sh script iterates over **a range of pressures and temperatures**, creating and submitting simulation jobs for each combination:
 
 1. **Looping Over Parameters:**  
    - `pressures=($(seq 0 50 1000))` → Generates pressures from **0 to 100** in steps of **5 GPa**.  
