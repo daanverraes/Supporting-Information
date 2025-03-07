@@ -83,7 +83,7 @@ This setup enables DFT calculations, Wannierization and cRPA calculations for th
 
 
 The interpolation.py script in the MLWFS folder enables the plotting of the band structure superimposed by the Wannier interpolated bands.
-If any intermediate output files are requested, feel free to contact me.
+If any intermediate output files are requested, feel free to contact us.
 
 ## Ab initio molecular dynamics (AIMD)
 
