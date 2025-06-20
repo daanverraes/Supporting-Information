@@ -2,6 +2,8 @@
 # --------------
 SYSTEM = La3Ni2O7                       # Title of the SYSTEM
 GGA = PE                                # Generalized Gradient Approximation functional
+PSTRESS = 20                             # External pressure (in kB) applied during relaxation
+IVDW = 12                               # Use the DFT-D3 method of Grimme for dispersion corrections (zero-damping)
 
 # Electronic Structure
 # --------------------
@@ -10,7 +12,4 @@ SIGMA = 0.04                            # Width of the smearing in eV
 ISPIN = 1                               # Non-Spin polarized DFT
 EDIFF = 1E-08                           # SCF energy convergence threshold (in eV)
 ENCUT = 600.0                           # Plane-wave energy cutoff (eV)
-NBANDS = 224                            # Total number of KS orbitals
-ALGO = Exact                            # Exact diagonalization
-NELM = 1                                # One electronic step suffices, since WAVECAR from previous step is present
-LOPTICS = .TRUE.                        # Obtain dphi/dk  for GW calculations for long-wave limit
+NBANDS = 160                             # Total number of KS orbitals

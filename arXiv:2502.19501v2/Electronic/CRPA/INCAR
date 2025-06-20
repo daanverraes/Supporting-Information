@@ -10,7 +10,7 @@ SIGMA = 0.04                            # Width of the smearing in eV
 ISPIN = 1                               # Non-Spin polarized DFT
 EDIFF = 1E-08                           # SCF energy convergence threshold (in eV)
 ENCUT = 600.0                           # Plane-wave energy cutoff (eV)
-NBANDS = 224                            # Total number of KS orbitals
+NBANDS = 336                            # Total number of KS orbitals
 
 NCSHMEM = 1                             # switch off shared memory for chi
 ALGO = CRPA                             # Switch on CRPA
