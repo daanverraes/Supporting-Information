@@ -1,0 +1,7 @@
+# Tight-binding parameters (R = 0)
+# delta:
+0.291009
+# t_1_x:
+0.425507
+# t_2_z:
+0.573379

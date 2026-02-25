@@ -1,0 +1,14 @@
+SYSTEM = La3Ni2O7               # System name
+ISMEAR = 0                      # Gaussian smearing
+SIGMA  = 0.04                   # Smearing width (eV)
+EDIFF  = 1E-08                  # SCF convergence
+ENCUT  = 600.0                  # Plane-wave cutoff (eV)
+NBANDS = 160                    # Number of bands
+
+LDAU      = .TRUE.              # Enable DFT+U
+LDAUTYPE  = 2                   # Dudarev scheme
+LDAUL     = 3 -1 -1             # U on Ni d only
+LDAUU     = 18.00 0.00 0.00     # U values (eV)
+LDAUJ     = 0.00 0.00 0.00      # J values (eV)
+LMAXMIX   = 6                   # Charge mixing limit
+LDAUPRINT = 1                   # Minimal DFT+U output

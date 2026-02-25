@@ -8,8 +8,7 @@ from matplotlib import colormaps
 from matplotlib import rcParams
 
 rcParams.update({'font.size': 20})
-rcParams['font.family'] = 'serif'
-rcParams['font.serif'] = ['Times New Roman']
+rcParams['font.family'] = 'Nimbus Roman'
 rcParams["mathtext.fontset"] = "cm"
 
 bands = True
@@ -53,9 +52,10 @@ def extract_incar_data(file_path):
                 dis_froz_min = float(line.split("=")[1].strip())
             if "dis_froz_max" in line:
                 dis_froz_max = float(line.split("=")[1].strip())
-
+            
             if "NUM_WANN" in line:
-                NUM_WANN = int(line.split("=")[1].strip())
+                NUM_WANN = int(line.split("=")[1].split("#")[0].strip())
+
 
             if "begin kpoint_path" in line:
                 in_kpath = True
@@ -177,7 +177,7 @@ if project:
                 parts = lines[line_idx].split()
 
                 Data[b_idx, k_idx, i, 0] = float(parts[-1])
-                Data[b_idx, k_idx, i, 1] = float(parts[1])
+                Data[b_idx, k_idx, i, 1] = float(parts[5]) + float(parts[6]) + float(parts[7]) + float(parts[8]) + float(parts[9])
                 Data[b_idx, k_idx, i, 2] = float(parts[2]) + float(parts[3]) + float(parts[4])
                 Data[b_idx, k_idx, i, 3] = float(parts[9])
                 Data[b_idx, k_idx, i, 4] = float(parts[7])
@@ -245,16 +245,16 @@ if bands:
         seg = np.array([[[kk[j], E[i][j]], [kk[min(j + 1, len(kk) - 1)], E[i][min(j + 1, len(kk) - 1)]]] for j in range(1,len(kk))])
         
         if project:
-            upper_contrib = Data[i, :, 3:5, 3].sum(axis=1)
-            lower_contrib = Data[i, :, 3:5, 4].sum(axis=1)
+            upper_contrib = Data[i, :, 6:11, 3].sum(axis=1)
+            lower_contrib = Data[i, :, 6:11, 4].sum(axis=1)
             relative_weight = upper_contrib / (upper_contrib + lower_contrib + 1e-8)            
             total_contrib = upper_contrib + lower_contrib
             whiteness = 1 - total_contrib
 
-            dot_sizes = Data[i, :, :3, 3].sum(axis=1)
+            dot_sizes = Data[i, :, :6, 1].sum(axis=1)
             
             if max_size > 0:
-                absolute_sizes = 20 * dot_sizes # / max_size  # Keep absolute scaling
+                absolute_sizes = 20 * dot_sizes 
             else:
                 absolute_sizes = np.zeros_like(dot_sizes)
         
@@ -276,6 +276,7 @@ if bands:
 
 if MLWF:
     for i in range(len(Bands)):
+        
         if i == 0:
             plt.plot(k[:], Bands[i] - E_F_MLWF, color='black', linewidth=1.0, linestyle='--', label='MLWF')
         else:
@@ -290,7 +291,7 @@ if bands and project:
 
 plt.ylabel(r'$E-E_{F}$ [eV]')
 plt.xlabel('K-points')
-plt.ylim(-3.2, 4.2)
+plt.ylim(-3.2, 10.0)
 plt.axhline(0, linestyle=(0, (5, 5)), linewidth=1, color='g', alpha=1)
 
 if windows:
@@ -306,4 +307,4 @@ plt.grid(axis='x')
 axs.set_xlim(kk[0], kk[-1])
 plt.subplots_adjust(left=0.05, right=0.95, top=0.95, bottom=0.05)
 plt.tight_layout(pad=0)
-plt.savefig("bands.png", bbox_inches='tight')
+plt.savefig("bands.png", bbox_inches='tight', dpi=300)
