@@ -7,7 +7,6 @@ This GitHub repository contains all input data necessary to reproduce the result
 
 by Daan Verraes, Tom Braeckevelt, Nick Bultinck and Veronique Van Speybroeck.
 
-This work was published in Nat. Commun., XXXX, XX: XXXX (DOI: ).
 
 The data presented here is licensed under the CC BY-SA 4.0 international license, a copy of which can be found [here](https://creativecommons.org/licenses/by-sa/4.0/). Under this license, you can copy and redistribute the material in any medium or format as long as you give appropriate credit, provide a link to the license, and indicate if changes were made.
 
