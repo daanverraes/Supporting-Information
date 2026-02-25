@@ -1,0 +1,16 @@
+# System and LoT
+# --------------
+SYSTEM = La3Ni2O7                       # Title of the SYSTEM
+GGA = PE                                # Generalized Gradient Approximation functional
+
+# Electronic Structure
+# --------------------
+ISMEAR = 0                              # Gaussian smearing
+SIGMA = 0.04                            # Width of the smearing in eV
+ISPIN = 1                               # Non-Spin polarized DFT
+EDIFF = 1E-08                           # SCF energy convergence threshold (in eV)
+ENCUT = 600.0                           # Plane-wave energy cutoff (eV)
+NBANDS = 336                            # Total number of KS orbitals
+ALGO = Exact                            # Exact diagonalization
+NELM = 1                                # One electronic step suffices, since WAVECAR from previous step is present
+LOPTICS = .TRUE.                        # Obtain dphi/dk  for GW calculations for long-wave limit
